@@ -10,7 +10,7 @@ public class Node<T> {
 		this.next = next;
 	}
 	
-	/** Getter methods and setter methods. **/
+	/** Getters and setters. **/
 	public T getKey() {
 		return key;
 	}
