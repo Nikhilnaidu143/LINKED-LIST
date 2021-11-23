@@ -35,6 +35,12 @@ public class Linked_List {
 		currentNode.next = node;
 	}
 	
+	/** Uc-5 :- Ability to delete the first element in the LinkedList of sequence 56->30->70. **/
+	public <T> Node popFirst() {
+		Node currentNode = head;
+		head = head.next;          // changing head from 56 to 30 , so 56 will be null and it will be deleted.
+		return currentNode;
+	}
 	
 	/** printing linked list **/
 	public <T> void print() {
@@ -47,6 +53,7 @@ public class Linked_List {
 		System.out.print("null");
 	}
 	
+	
 	public static void main(String[] args) {
 		/** Displayed welcome message **/
 		System.out.println("-----------WELCOME TO LINKED LIST-------------");
@@ -57,7 +64,8 @@ public class Linked_List {
 		linkedList.addFirst(56);	
 		linkedList.append(70);      
 		linkedList.insertBetween(56, 30);
-									
+		linkedList.popFirst();
+		
 		linkedList.print();  //printing linkedlist keys/elements/data.
 	}	
 }
