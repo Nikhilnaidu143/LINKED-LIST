@@ -24,6 +24,18 @@ public class Linked_List {
 	}
 	
 	
+	/** UC-4 :- Ability to insert 30 between 56 and 70. **/
+	public <T> void insertBetween(T previous_key , T key) {
+		Node currentNode = head;
+		while(currentNode.key != previous_key) {
+			currentNode = currentNode.next;          //  56 | next  ------>  30 | next------> 70 | next ----> null
+		}                                            //(previous_key)    (inserted between)
+		Node node = new Node(key);
+		node.next = currentNode.next;
+		currentNode.next = node;
+	}
+	
+	
 	/** printing linked list **/
 	public <T> void print() {
 		Node currentNode = head;
@@ -43,8 +55,8 @@ public class Linked_List {
 		Linked_List linkedList = new Linked_List();   
 		 
 		linkedList.addFirst(56);	
-		linkedList.append(30);      // appending 30 and 70 to 56.
-		linkedList.append(70);        
+		linkedList.append(70);      
+		linkedList.insertBetween(56, 30);
 									
 		linkedList.print();  //printing linkedlist keys/elements/data.
 	}	
