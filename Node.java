@@ -4,7 +4,7 @@ public class Node<T> {
 	T key;                 // key/Data with Generic type.
 	Node next = null;      // initially next assigned as null.
 	
-	/** Constructors **/
+	/** Constructor **/
 	public Node(T key) {
 		this.key = key;
 		this.next = next;
