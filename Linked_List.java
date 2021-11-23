@@ -54,6 +54,21 @@ public class Linked_List {
 		previousToLast.next = null;
 	}
 	
+	/** UC-7 :- Ability to search LinkedList to find Node with value 30. **/
+	public <T> boolean search(T key) {
+		Node currentNode = head;
+		while(currentNode != null) {                               
+			if(currentNode.key == key) {                                 // 56 | next --> 30 | next
+				System.out.println("\n\nNode :- " + currentNode.key);   //   (head)        (found)
+				return true;
+			}
+			currentNode = currentNode.next;
+		}
+		System.out.println("\n\nNode not found");
+		return false;
+	}
+	
+	
 	/** printing linked list **/
 	public <T> void print() {
 		Node currentNode = head;
@@ -76,8 +91,10 @@ public class Linked_List {
 		linkedList.addFirst(56);	
 		linkedList.append(70);      
 		linkedList.insertBetween(56, 30);
-		linkedList.popLast();        // deleting the last node.
+		
 		linkedList.print();  //printing linkedlist keys/elements/data.
+		linkedList.search(30);
+		
 	}	
 }
 
