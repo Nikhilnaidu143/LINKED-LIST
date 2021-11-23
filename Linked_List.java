@@ -42,6 +42,18 @@ public class Linked_List {
 		return currentNode;
 	}
 	
+	
+	/** UC-6 :- Ability to delete the last element in the LinkedList of sequence 56->30->70. **/
+	public <T> void popLast() {
+		Node currentNode = head;
+		Node previousToLast = null;
+		while(currentNode.next != null) {
+			previousToLast = currentNode;
+			currentNode = currentNode.next;
+		}
+		previousToLast.next = null;
+	}
+	
 	/** printing linked list **/
 	public <T> void print() {
 		Node currentNode = head;
@@ -64,8 +76,7 @@ public class Linked_List {
 		linkedList.addFirst(56);	
 		linkedList.append(70);      
 		linkedList.insertBetween(56, 30);
-		linkedList.popFirst();
-		
+		linkedList.popLast();        // deleting the last node.
 		linkedList.print();  //printing linkedlist keys/elements/data.
 	}	
 }
