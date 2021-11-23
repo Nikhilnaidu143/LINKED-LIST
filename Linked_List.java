@@ -3,8 +3,15 @@ package com.bridgeLabz.linkedList;
 public class Linked_List {
 	Node head = null;  // initially we are assigning head as null.
 	
-	/** printing linked list **/
+	/** UC-2 :- Ability to create Linked List by adding 30 and 56 to 70 **/
+	public <T> void addFirst(T key) {             
+		Node node = new Node(key);           // Adding data at firstmethod.
+		node.setKey(key);                       
+		node.setNext(head);           //    56 | next ------> 30 | next -------> 70 | next -->null
+		head = node;                  //  (added third)     (added second)     (added first)
+	}
 	
+	/** printing linked list **/
 	public <T> void print() {
 		Node currentNode = head;
 		System.out.println("Linked-List :- ");           // head
@@ -22,13 +29,11 @@ public class Linked_List {
 		/** creating object of Linked_List class **/
 		Linked_List linkedList = new Linked_List();   
 		
-		linkedList.head = new Node(56);                  /** diagram representation **/
-		Node node2 = new Node(30);          //   linkedList.head
-		Node node3 = new Node(70);          //        |
-											//		  V
-		linkedList.head.next = node2;       //      56 | next --> 30 | next --> 70 | next --> null
-		node2.next = node3;									
-			
+		linkedList.addFirst(70);  
+		linkedList.addFirst(30);        
+		linkedList.addFirst(56);								
+		
 		linkedList.print();  //printing linkedlist keys/elements/data.
 	}	
 }
+
