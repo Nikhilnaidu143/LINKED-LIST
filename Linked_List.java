@@ -109,7 +109,6 @@ public class Linked_List {
 		System.out.println("Size of the Linked List :- " + count);
 	}
 	
-	
 	/** printing linked list **/
 	public <T> void print() {
 		Node currentNode = head;
@@ -122,21 +121,25 @@ public class Linked_List {
 	}
 	
 	
+	/*** Main Method ***/
 	public static void main(String[] args) {
 		/** Displayed welcome message **/
 		System.out.println("-----------WELCOME TO LINKED LIST-------------");
 		
 		/** creating object of Linked_List class **/
-		Linked_List linkedList = new Linked_List();   
-		 
-		linkedList.addFirst(56);	
-		linkedList.append(70);      
-		linkedList.insertBetween(56, 30);
+		SortedLinkedList sortedLinkedList = new SortedLinkedList();
+	
+		sortedLinkedList.addNode(56);    
+		sortedLinkedList.addNode(30);
+		sortedLinkedList.addNode(40);
+		sortedLinkedList.addNode(70);
 		
-		linkedList.searchAndInsert(30 , 40);
-		linkedList.DeleteByKey(40);
+		System.out.println("Linked List before sorting :-");
+		sortedLinkedList.display();
 		
-		linkedList.print();  //printing linkedlist keys/elements/data.
+		System.out.println("\nLinked List after sorting :-");
+		sortedLinkedList.sort();
+		
 	}	
 }
 
